@@ -25,13 +25,8 @@ Our implementation can be used to exploring the capabilities of AgreementMakerLi
 
 1. Clone this repo.
 2. Download and unzip [AgreementMakerLight](https://github.com/AgreementMakerLight/AML-Project/releases) inside the repo such that  [AgreementMakerLight.jar](https://github.com/AgreementMakerLight/AML-Project/releases) and OntoMatch.py and Folder 'store' are in the root folder.
-3. Place the otologies to be compared in your root folder.
-4. Open Matchresults_method2.py using VS code or similar.
-5. Edit the following in `run_match(arglist,count)` in the file `OntoMatch.py` to include your ontologies instead of `BOT.owl` and `DogOntW.owl`. This should be exact file names of ontologies you have placed in root folder.
-
-    ~~~~ 
-    os.system('java -jar ./AgreementMakerLight.jar -s BOT.owl -t DogOntW.owl -o alignment.rdf -m')
-    ~~~~
-6. Edit the combination of properties in the `main()` in the file `OntoMatch.py`. 
-7. Run the code.
-8. You would see results in `count_result` and `result` file.
+3. Place the ontologies to be compared in your root folder.
+4. Open OntoMatch.py using VS code or similar.
+5. Edit the combination of properties in the `main()` in the file `OntoMatch.py`. 
+6. Run the code.
+7. You would see results in `count_result` and `result` file.
