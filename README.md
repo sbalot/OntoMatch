@@ -28,6 +28,7 @@ Our implementation can be used to exploring the capabilities of AgreementMakerLi
 3. Place the otologies to be compared in your root folder.
 4. Open Matchresults_method2.py using VS code or similar.
 5. Edit the following in `run_match(arglist,count)` in the file `OntoMatch.py` to include your ontologies instead of `BOT.owl` and `DogOntW.owl`. This should be exact file names of ontologies you have placed in root folder.
+
     ~~~~ 
     os.system('java -jar ./AgreementMakerLight.jar -s BOT.owl -t DogOntW.owl -o alignment.rdf -m')
     ~~~~
