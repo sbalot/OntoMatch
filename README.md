@@ -6,21 +6,23 @@ This work won the award for the best project at [LDAC2019 Hackathon ] (http://li
 
 Our implementation can be used to exploring the capabilities of AgreementMakerLight tool for ontology matching. We used Python scripts to automate creating different outputs by trying out different settings of [AgreementMakerLight](https://github.com/AgreementMakerLight/AML-Project/releases) to determine the best property combination for matching your domain ontology.
 
-##Requirements and Steps
+## Requirements and Steps
+
 ###Python libraries required
 
-1.Python 3.7
-2.RDFlib
-3.Numpy
-4.Itertols
+1. Python 3.7
+2. RDFlib
+3. Numpy
+4. Itertols
 5. re
 6. os
 
-###Precompiled tools required
+### Precompiled tools required
 
  [AgreementMakerLight](https://github.com/AgreementMakerLight/AML-Project/releases)
 
-###Steps
+### Steps
+
 1. Clone this repo.
 2. Download and unzip [AgreementMakerLight](https://github.com/AgreementMakerLight/AML-Project/releases) inside the repo such that  [AgreementMakerLight.jar](https://github.com/AgreementMakerLight/AML-Project/releases) and OntoMatch.py and Folder 'store' are in the root folder.
 3. Place the otologies to be compared in your root folder.
