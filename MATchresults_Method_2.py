@@ -1,4 +1,3 @@
-
 import os
 import re
 import shutil
@@ -8,11 +7,18 @@ import numpy as np
 
 # !/usr/bin/env python3
 
+#Creating the './store/config_files/' , './store/alignment_files/' folder
+#These folders will be used to store the config.ini and alignment.rdf files for 'for loop' interation from main()
+if not os.path.exists('./store/config_files/'):
+    os.makedirs('./store/config_files/')
+if not os.path.exists('./store/alignment_files/'):
+    os.makedirs('./store/alignment_files/')
 
+#Writing config.ini files for each loop in main()
 def create_config_file(arglist,count):
-    if os.path.exists("./store/config.ini"):
+    if os.path.exists("./store/config.ini"):        ##Removing previous files
         os.remove("./store/config.ini")
-    f = open("./store/config.ini", "w")
+    f = open("./store/config.ini", "w")             #Writing the paramters and their value combination for a particular loop
     f.write("""use_translator=false
     bk_sources=%s
     word_matcher=auto
@@ -26,7 +32,7 @@ def create_config_file(arglist,count):
     shutil.copyfile("./store/config.ini",
                     "./store/config_files/"+str(count)+"_Config_%s_%s_%s_%s_%s.ini" % arglist)
 
-
+#Running the AgreementMakerLight.jar file and saving the result as an "alignment.rdf" file. 
 def run_match(arglist,count):
     if os.path.exists("./alignment.rdf"):
         os.remove("./alignment.rdf")
@@ -35,7 +41,7 @@ def run_match(arglist,count):
     shutil.copyfile("./alignment.rdf",
                     "./store/alignment_files/"+str(count)+"_alignment_%s_%s_%s_%s_%s" % arglist)
 
-# yet to be NotImplemented
+#*****UNDER CONSTRUCTION: yet to be Implemented*******************************************************************************
 def generate_graph():
     g=rdflib.Graph()
     g.parse("alignment.rdf", format="xml")
@@ -47,7 +53,8 @@ def generate_graph():
                         ?s <http://knowledgeweb.semanticweb.org/heterogeneity/alignmententity2> ?entity2.
                 }""")
     return qres
-
+#*****************************************************************************************************************************
+#Curate the matches in the source and target ontologies and output the number of matches
 def parse_alignment_file(arglist,count):
    # finalgraph=generate_graph()
     
@@ -85,7 +92,7 @@ def removeOutputfiles():
     if os.path.exists("./count_result"):
         os.remove("./count_result")
 
-
+#Defining the potential combinations for the config.ini file
 def main():
     count=1
     removeOutputfiles()
