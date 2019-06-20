@@ -36,11 +36,11 @@ def create_config_file(arglist,count):
                     "./store/config_files/"+str(count)+"_Config_%s_%s_%s_%s_%s.ini" % arglist)
 
 #Running the AgreementMakerLight.jar file and saving the result as an "alignment.rdf" file. 
-def run_match(arglist,count):
+def run_match(arglist,count,source,target):
     if os.path.exists("./alignment.rdf"):
         os.remove("./alignment.rdf")
     os.system(
-        'java -jar ./AgreementMakerLight.jar -s BOT.owl -t DogOntW.owl -o alignment.rdf -m')
+        'java -jar ./AgreementMakerLight.jar -s %s -t %s -o alignment.rdf -m' %(source,target))
     shutil.copyfile("./alignment.rdf",
                     "./store/alignment_files/"+str(count)+"_alignment_%s_%s_%s_%s_%s" % arglist)
 
@@ -105,10 +105,11 @@ def main():
     struct_matcher = ["auto","maximum","minimum"]
     match_properties = ["true", "false" ]
     selection_type = ["strict", "permissive", "hybrid", "none"]
-
+    source=input("Please input the source ontology file: ")
+    target=input("Please input target ontology file: ")
     for arglist in list(itertools.product(bk_sources,string_matcher, struct_matcher, match_properties, selection_type)):
         create_config_file(arglist,count)
-        run_match(arglist,count)
+        run_match(arglist,count,source,target)
         parse_alignment_file(arglist, count)
         count=count+1
 
