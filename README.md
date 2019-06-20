@@ -31,6 +31,6 @@ Our implementation can be used to exploring the capabilities of AgreementMakerLi
     ~~~~ 
     os.system('java -jar ./AgreementMakerLight.jar -s BOT.owl -t DogOntW.owl -o alignment.rdf -m')
     ~~~~
-6. Edit the combination of properties in the `main()` 
+6. Edit the combination of properties in the `main()`. 
 7. Run the code.
 8. You would see results in `count_result` and `result` file.
