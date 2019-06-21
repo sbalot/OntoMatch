@@ -30,3 +30,5 @@ Our implementation can be used to exploring the capabilities of AgreementMakerLi
 5. Edit the combination of properties in the `main()` in the file `OntoMatch.py`. 
 6. Run the code.
 7. You would see results in `count_result` and `result` file.
+8. The respective config.ini files containing combinations of AML methods and the resulting 'alignment.rdf' are stored in ./store/config_files/ and ./store/alignment_files/ respectively.
+
