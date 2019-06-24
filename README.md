@@ -13,7 +13,7 @@ Our implementation can be used to exploring the capabilities of AgreementMakerLi
 1. Python 3.7
 2. RDFlib
 3. Numpy
-4. Itertols
+4. Itertools
 5. re
 6. os
 
