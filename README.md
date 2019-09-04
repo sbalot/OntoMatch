@@ -32,3 +32,9 @@ Our implementation can be used to exploring the capabilities of AgreementMakerLi
 7. You would see results in `count_result` and `result` file.
 8. The respective config.ini files containing combinations of AML methods and the resulting 'alignment.rdf' are stored in ./store/config_files/ and ./store/alignment_files/ respectively.
 
+### Using Knowledge Bases to improve matching
+The AgreementMakerLight has options to different matching steps, the default one being "Background Knowledge Matcher". The .py file in this repository runs using all the available owl files in the ./store/knowledge/. folder by default.
+
+1. An owl file of any ontology has to be copied in the following root folder of the tool: ./store/knowledge/. 
+2. In the tool, go to Match>Custom Match>Match Options>Settings>Matching Settings, and select your loaded knowledge base prior to initiating the matching.
+
