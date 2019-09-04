@@ -30,3 +30,7 @@ Our implementation can be used to exploring the capabilities of AgreementMakerLi
 5. Edit the combination of properties in the `main()` in the file `OntoMatch.py`. 
 6. Run the code.
 7. You would see results in `count_result` and `result` file.
+
+### Using Knowledge Bases to improve matching
+The AgreementMakerLight has options to different matching steps, the default one being "Background Knowledge Matcher". An owl file of any ontology has to be copied in the following root folder of the tool: ./store/knowledge. The, in the tool, go to Match>Custom Match>Match Options>Settings>Matching Settings, and select your loaded knowledge base prior to initiating the matching. 
+
